@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+ <head>
+   <meta charset="utf-8">
+   <title>AtaqueZombie</title>
+   <link rel="stylesheet" type="text/css" href="style.css">
+   <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet"> <!--Obtener fuente desde google fonts-->
+ </head>
+ <body>
+    <main>
+      <!-- formulario--------------------------------------------------- -->
+        <section id="enterName">
+          <img class="logo" src="imagenes/logAtaqueZombie.png" alt="Ataque Zombie">
+          <h1>¿Sobrevivir o morir?</h1>
+          <form onsubmit="showElements(event, ['categories'],['enterName'])">
+            <input type="text" required="required" id="userName" placeholder="Nombre/Apodo">
+            <button type="submit" name="button">Jugar</button>
+          </form>
+        </section>
+      <!-- final formulario--------------------------------------------------- -->
+
+      <!-- categorias y saludo------------------------------------------------ -->
+        <section id="categories" style="display:none"> <!--Display none para que no se muestre en pantalla-->
+        	<h1 id="name"></h1>
+          <h2 class="choose">¡Escoge alguna de las siguientes categorías y comprueba que tan preparado estás para un ataque zombie!</h2>
+          <button type="button" onclick="showElements(event,['question1-1'],['categories'])">Acciones de supervivencia</button>
+          <button type="button" onclick="showElements(event,['question2-1'],['categories'])" >Armas de defensa personal</button>
+        </section>
+      <!-- final categorias y saludo------------------------------------------------ -->
+
+      <!-- categoria acciones de supervivencia question 1.0------------------------- -->
+        <section id="question1-1" style="display:none">
+          <img class="imgQuestion2" src="imagenes/azQuestion1.png" alt="Ataque Zombie - Pregunta 1">
+          <h2>¿Qué harías si hay un ataque zombie?</h2>
+          <button class="wrongAnswer" type="button" onclick="showElements(event,['question1-2'],['question1-1'])">1. Abrazar a mi mamá y llorar.</button>
+          <br>
+          <button class="rightAnswer" type="button" onclick="showElements(event,['question1-2'],['question1-1'])">2. Buscar refugio y un arma.</button>
+          <br>
+				</section>
+				
+				<section id="question1-2" style="display:none">
+          <img class="imgQuestion2" src="imagenes/azQuestion2.png" alt="Ataque Zombie - Pregunta 2">
+          <h2>Si un zombie te persigue, tú:</h2>
+          <button class="rightAnswer" type="button" onclick="showElements(event,['question1-3'],['question1-2'])">1. Le disparas.</button>
+          <br>
+          <button class="wrongAnswer" type="button" onclick="showElements(event,['question1-3'],['question1-2'])">2. Lo abrazas y lloras con el.</button>
+          <br>
+				</section>
+				
+				<section id="question1-3" style="display:none">
+          <img class="imgQuestion2" src="imagenes/azQuestion3.png" alt="Ataque Zombie - Pregunta 3">
+          <h2>¿A que parte del cuerpo del zombie le dispararías</h2>
+          <button class="rightAnswer" type="button" onclick="showElements(event,['result'],['question1-3'])">1. A la cabeza.</button>
+          <br>
+          <button class="wrongAnswer" type="button" onclick="showElements(event,['result'],['question1-3'])">2. Al pie y lloras.</button>
+          <br>
+        </section>
+        <!-- final categoria acciones de supervivencia question 1.0------------------------- -->
+
+        <!-- categoria Armas de defensa personal question 2.0------------------------- -->
+        <section id="question2-1" style="display:none">
+          <img class="imgQuestion" src="imagenes/azQuestion1.png" alt="Ataque Zombie - Pregunta 1">
+          <h2> ¿Cuál arma escogerías en un ataque zombie?</h2>
+          <button class="wrongAnswer" type="button" onclick="showElements(event,['question2-2'],['question2-1'])">1. Una almohada parar llorar.</button>
+          <br>
+          <button class="rightAnswer" type="button" onclick="showElements(event,['question2-2'],['question2-1'])">2. Una metralleta.</button>
+          <br>
+				</section>
+				
+				<section id="question2-2" style="display:none">
+          <img class="imgQuestion" src="imagenes/azQuestion2.png" alt="Ataque Zombie - Pregunta 2">
+          <h2>Si hay un zombie en tu cocina, tú:</h2>
+          <button class="rightAnswer" type="button" onclick="showElements(event,['question2-3'],['question2-2'])">1. Le arrojas un cuchillo.</button>
+          <br>
+          <button class="wrongAnswer" type="button" onclick="showElements(event,['question2-3'],['question2-2'])">2. Le compartes de tu cereal.</button>
+          <br>
+				</section>
+				
+				<section id="question2-3" style="display:none">
+          <img class="imgQuestion" src="imagenes/azQuestion3.png" alt="Ataque Zombie - Pregunta 3">
+          <h2>Si puedes escoger cualquier elemento de una tienda, tú: </h2>
+          <button class="rightAnswer" type="button" onclick="showElements(event,['result'],['question2-3'])">1.Buscarías objetos cortopunzantes.</button>
+          <br>
+          <button class="wrongAnswer" type="button" onclick="showElements(event,['result'],['question2-3'])">2. Buscarías el pasillo de golosinas.</button>
+          <br>
+        </section>
+        <!-- final categoria Armas de defensa personal question 2.0------------------------- -->
+
+        <!-- Resultados------------------------- -->
+				<section id="result" style="display:none">
+          <div class="resultPositive">
+            <img class="imgCongratulations" src="imagenes/zombieFelicitaciones.png" alt="Ataque Zombie - Sobrevivir">
+            <h2>Tuviste las 3 respuestas correctas, estás listo para una invasión zombie.</h2>
+            <button type="button" onclick="location.reload()">Volver a jugar</button>
+            <button type="button" onclick="showElements(event,['leave'],['result'])">Salir</button>
+          </div>  
+           <div class="resultNegative" style="display:none">
+            <img class="imgCongratulations" src="imagenes/zombieSigueIntentando.png" alt="Ataque Zombie - Sobrevivir">
+            <h2 id="totalWrongAnswer"></h2>
+            <button type="button" onclick="location.reload()">Volver a jugar</button>
+            <button type="button" onclick="showElements(event,['leave'],['result'])">Salir</button>
+          </div>  
+        </section>
+        <!-- final Resultados------------------------- -->
+
+        <!-- vuelve pronto---------------------- -->
+        <section id="leave" style="display: none;">
+          <img class="logo" src="imagenes/logAtaqueZombie.png" alt="Ataque Zombie">
+          <h2>Cuídate de los zombies y vuelve pronto.</h2>
+        </section>
+        <!-- final vuelve pronto---------------- -->
+    </main>
+ 
+   <script src='script.js'></script> <!--Vincular HTML con JS-->
+ </body>
+</html>

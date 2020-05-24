@@ -1,0 +1,114 @@
+* {
+    margin:0;
+    padding:0;
+}
+    
+body {
+    background: linear-gradient(#170d30,#ffa500);
+    color: #271e4c;
+    font-family: Gloria Hallelujah;
+    text-align: center;
+}
+
+main{
+    min-height: 100vh;
+    background: url(imagenes/bgBottomAZ.png) bottom repeat-x fixed; /*Fijar imagen de fondo abajo, se repite en eje x*/
+}
+
+.logo{
+    margin-top: 100px;
+    height: 20%;
+    width: 20%;
+    min-width: 200px;
+} 
+
+.imgQuestion2{
+    margin-top: -70px;
+    height: 15%;
+    width: 15%;
+    min-width: 200px;
+}
+
+.imgQuestion{
+    margin-top: 100px;
+    height: 15%;
+    width: 15%;
+    min-width: 200px;
+} 
+
+input{
+    background-color: rgba(255, 255, 255, 0.3);;
+    border: 2px solid #4d307a;
+    border-radius: 50px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    outline: none;
+    height: 40px;
+    color: #4d307a;
+}
+
+input::placeholder {
+    color: white;
+}
+
+button{
+    background-color: #3a8368;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-family: Gloria Hallelujah;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+    
+button:hover { /*Hover para cuando el cursor esté encima de él*/
+    background-color: #4CAF50;
+    color: white;
+}
+
+#name{
+    font-size: 60px;
+    color: #ffa500;
+}
+
+h1{
+    color: #ffa500;
+}
+
+h2{
+    color: white;
+}
+
+#categories{
+    margin-top: 180px;
+}
+
+.choose{
+    color: white;
+    margin-bottom: 50px;
+}
+
+#question1-1{
+    margin-top: 180px;
+}
+
+#question1-2{
+    margin-top: 180px;
+}
+
+#question1-3{
+    margin-top: 180px;
+}
+
+.imgCongratulations{
+    width: 20%;
+    height: 20%;
+    margin-top: 150px;
+}
